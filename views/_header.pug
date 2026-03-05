@@ -1,0 +1,26 @@
+header 
+
+	.header
+		.header--box
+	
+			.header__logo--box
+
+				a(href="/") 
+					img(src='/img/logo/myLogo.png', alt='image', class='header__logo' fetchpriority="high")
+			
+			.header__nav--box
+			
+				nav.header__nav 
+					ul.header__nav--list 
+						li.header__nav--item 
+							a(href='/static/services' class='header__nav--link') Services
+						li.header__nav--item 
+							a(href='/static/portfolio' class='header__nav--link') Portfolio
+						li.header__nav--item 
+							a(href='/static/about' class='header__nav--link') About
+						li.header__nav--item 
+							a(href='/static/contact' class='header__nav--link') Contact
+					
+			.header__cta--box
+				.header__cta--link-box 
+					a(href="/static/contact" class='header__cta-link')  Get a Quick Quote

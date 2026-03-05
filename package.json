@@ -1,0 +1,46 @@
+{
+  "name": "website_template-non-variant",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "set NODE_ENV=development&& nodemon server.js",
+    "prod": "set NODE_ENV=production&& nodemon server.js",
+    "watch": "esbuild ./public/js/index.js --bundle --outfile=./public/js/bundle.js --watch",
+    "build": "esbuild ./public/js/index.js --bundle --minify --sourcemap --outfile=./public/js/bundle.js",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "axios": "^1.11.0",
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.1",
+    "express": "^4.21.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.0.1",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "html-to-text": "^9.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "lucide": "^0.536.0",
+    "mongoose": "^8.15.1",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.5",
+    "nodemon": "^3.1.10",
+    "pug": "^3.0.3",
+    "sharp": "^0.34.3",
+    "slugify": "^1.6.6",
+    "stripe": "^18.4.0",
+    "validator": "^13.15.15",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.8"
+  }
+}
