@@ -1298,6 +1298,141 @@ li a.header__nav--link:active	{
 
 
 
+/* //----						Services Page 					----// */
+
+	.servicesPage-heading-box{
+		
+		padding: 4.8rem 0 5.4rem;
+		
+		text-align: center;
+		
+		font-size: var(--text-h3);
+		
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		
+	}
+
+
+	.servicesPage-heading-box p{
+		
+		font-size: var(--text-xlg);
+	}
+
+	
+	.servicesPage-heading-box p:last-child{
+		
+		font-size: var(--text-body);
+		color: var(--color-text-muted-dk);
+	}
+
+
+
+.servicesPage-heading-box a:link,
+.servicesPage-heading-box a:visited{
+	
+	
+	text-decoration: none;
+	font-size: var(--text-body);
+	color: var(--color-text);
+	
+	background-color: var(--color-secondary);
+	
+	padding: 1rem 1.6rem;	
+}
+
+
+
+
+.servicePage--grid{
+	
+	max-width: 120rem;
+	
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(25rem , 32.5rem));	
+	justify-content: center;
+	gap: 4rem;
+}
+
+
+.servicePage--box{
+	
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	
+	padding: 2.4rem;
+	
+	background-color: var(--color-primary-lightest);
+	
+	border: 2px solid var(--color-dk-bg);
+}
+
+.servicePage--box-heading--icon, .servicePage--box-heading--text{
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.servicePage--box-heading--box{
+	
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	
+}
+
+
+.servicePage--box-heading--box h3{
+	
+	font-size: var(--text-xlg);
+}
+
+
+
+.servicePage--box-details--box p{
+	font-size: var(--text-body);
+	text-align: center;
+	margin-bottom: 3.2rem;
+	
+	
+}
+
+.servicePage--box-details--box ul{
+	
+	
+	font-size: var(--text-body);
+	list-style: none;
+	margin-bottom: 3.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+	
+}
+
+.servicePage--box-details--box-link{
+	
+	display: flex;
+	justify-content: center;
+}
+
+
+.servicePage--box-details--box-link a:link,
+.servicePage--box-details--box-link a:visited{
+	
+	text-decoration: none;
+	
+	font-size: var(--text-body);
+	
+	color: var(--color-text);
+	
+	background-color: var(--color-secondary);
+	padding: 1rem 1.6rem;	
+	
+}
+
 /* //----						Login Page 					----// */
 
 

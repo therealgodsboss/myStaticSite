@@ -53,10 +53,16 @@ exports.getHomePage = catchAsync(async (req, res, next) => {
 //----------------------- Static Pages --------------------------//
 
 
-//--------------------- Blog Page --------------------------//
+//--------------------- Services Page --------------------------//
 
 
-exports.getBlogPage = pageFunction('services');
+exports.getServicesPage = pageFunction('services');
+
+
+//--------------------- Portfolio Page --------------------------//
+
+
+exports.getPortfolioPage = pageFunction('portfolio');
 
 
 

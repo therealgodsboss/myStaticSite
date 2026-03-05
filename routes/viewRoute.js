@@ -25,9 +25,14 @@ router.get('/', viewController.getHomePage);
 //------ Static Pages	-----//
 
 
-// /// Blog
+// /// Services
 
-router.get('/static/services', viewController.getBlogPage);
+router.get('/static/services', viewController.getServicesPage);
+
+
+// /// Portfolio
+
+router.get('/static/portfolio', viewController.getPortfolioPage);
 
 
 
