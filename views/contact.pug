@@ -6,6 +6,63 @@ block content
 
 	main.container
 	
-		.contactPage--headings.mrgbtm--lg 
+		section.contact
+			
+			.contact-heading-box.container
+			
+				.contact-heading-box-underline
 
-			h2.contactPage--sub-heading Contact
+					h2.servicesPage--heading Get In Touch
+					hr.contact-underline
+					
+				.contact-text-box
+					p Thinking about getting a website for your business? Fill out the form and tell us a little about what you do. If you’re starting from scratch and want a simple, professional online presence, this is a good place to begin.
+
+				
+			.contact-form-box
+			
+				.contact-form-grid
+				
+					.contact-form--img--box
+						img(src="/img/imgs/form-img.jpg", alt="" , class='contact-form--img')
+					
+					.contact-form--form
+					
+						form#contact--form(action="" , class='contact-form')
+						
+							.contact-form--row 
+								label(for="name") Name 
+								input(type="text" name='name' id='name')
+								
+							.contact-form--row 
+								label(for="email") Email 
+								input(type="email" name='email' id='email') 
+								
+							.contact-form--row 
+								label(for="phone") Phone 
+								input(type="phone" name='phone' id='phone') 
+								
+							//- .contact-form--row 
+							//- 	label(for="business") Business Name 
+							//- 	input(type="text" name='business' id='business') 
+															
+							.contact-form--row 
+								label(for="help") Enquiry
+								select#help(name="help") 
+									option(value="general-enquiry") General enquiry
+									option(value="new-website") New website
+									option(value="simple-business-website") Simple business website
+									option(value="online-store") Online store
+									option(value="booking-enquiry-website") Booking / enquiry website
+									option(value="not-sure-yet") Not sure yet
+							
+							.contact-form--row 
+								label(for="message" id='message-label') Message
+								textarea#message(name="message" rows="6" cols='52' placeholder="Tell us a little about your business and what you need...")
+							
+							.contact-form--submit-btn 
+								button(type='submit' , class='contact-form--btn') Submit
+														 
+
+				
+			
