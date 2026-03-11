@@ -462,7 +462,7 @@ h1, h2, h3, h4{
 		font-size: var(--text-xxlg);		
 		font-weight: 500;
 		
-		padding: 4rem 0 6rem;
+		padding: 4rem 2rem 6rem;
 	}
 	
 	
@@ -556,7 +556,7 @@ border-bottom: 1px solid var(--color-lt-bg);
 
 .header--box{
 	
-	padding: 1.6rem 0;
+	padding: 1.6rem;
 }
 
 .header--box , .footer--box{
@@ -685,6 +685,10 @@ li a.header__nav--link:active	{
 	box-shadow: 4px 6px 24px rgba(42, 57, 93, 0.3);
 }
 
+
+.header__hamburger--box {
+	display: none;
+}
 
 /* //						Footer Page 					// */
 
@@ -1029,9 +1033,8 @@ li a.header__nav--link:active	{
 	align-items: center;
 	justify-content: center;
 	grid-template-columns: repeat(auto-fit, minmax(27rem, 37rem));
-	gap: 6rem;
-	
-	padding: 0 2rem;
+	gap: 4rem;
+
 	background: #fff;
 	
 }
@@ -1729,7 +1732,9 @@ li a.header__nav--link:active	{
 	
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 6rem;
+	gap: 4rem;
+	
+	padding: 0 2rem;
 }
 
 
@@ -1880,7 +1885,7 @@ justify-content: flex-end;
 	
 	content: "";
 	display: block;
-	padding: 35rem;
+	padding: 30rem 20rem;
 
 	background: radial-gradient(
 	  circle,
@@ -1896,7 +1901,7 @@ justify-content: flex-end;
 
 
 top: 51%;
-right: 37.5%;
+right: 40.5%;
 border-radius: 50%;
 transform: translate(50%,-50%)
 
@@ -1946,6 +1951,8 @@ h2.portfolio-heading {
 .portfolio{
 	
 	margin-bottom: 4rem;
+	
+	padding: 0 2rem;
 }
 
 

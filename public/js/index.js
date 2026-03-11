@@ -91,13 +91,19 @@ if (signupForm) {
 }
 
 
-//--------------------  Enquiry Form   -------------------//
+//--------------------  hamburger  -------------------//
 
+const hamburgerBtn = document.querySelector('.header__hamburger');
+const navBox = document.querySelector('.header__nav--box');
 
+if (hamburgerBtn && navBox) {
+	hamburgerBtn.addEventListener('click', function () {
+		navBox.classList.toggle('active');
 
-
-
-
+		const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+		hamburgerBtn.setAttribute('aria-expanded', String(!isExpanded));
+	});
+}
 
 
 

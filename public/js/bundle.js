@@ -20369,6 +20369,15 @@
       signUpUser(data);
     });
   }
+  var hamburgerBtn = document.querySelector(".header__hamburger");
+  var navBox = document.querySelector(".header__nav--box");
+  if (hamburgerBtn && navBox) {
+    hamburgerBtn.addEventListener("click", function() {
+      navBox.classList.toggle("active");
+      const isExpanded = hamburgerBtn.getAttribute("aria-expanded") === "true";
+      hamburgerBtn.setAttribute("aria-expanded", String(!isExpanded));
+    });
+  }
   var howItWorks = document.getElementById("how-it-works");
   if (howItWorks) {
     const panels = howItWorks.querySelectorAll(".process__step-text");
