@@ -16,6 +16,7 @@ const errorController = require('./controllers/errorController');
 ///---		Route Handlers		---///
 
 
+const enquiryRouter = require('./routes/enquiryRoute');
 const userRouter = require('./routes/userRoute');
 const viewRouter = require('./routes/viewRoute');
 const adminRouter = require('./routes/adminRoute');
@@ -191,6 +192,7 @@ app.use((req, res, next) => {
 ///---				Routes				---///
 
 
+app.use('/api/v1/enquiries', enquiryRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/admin', adminRouter);
 app.use('/', viewRouter);

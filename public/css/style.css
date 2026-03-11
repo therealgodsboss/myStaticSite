@@ -619,12 +619,12 @@ ul.header__nav--list{
 	
 	font-family: "Rubik", serif;
 	list-style: none;
-	font-size: var(--text-lg);
-	font-weight: 400;
+	font-size: var(--text-body);
+	font-weight: 600;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 6.2rem;	
+	gap: 5.8rem;	
 }
 
 
@@ -636,6 +636,7 @@ li a.header__nav--link:visited{
 	text-decoration: none;
 	color: var(--color-text);
 	transition: all .2s;
+	border-bottom: 1px solid transparent;
 	
 }
 
@@ -644,7 +645,9 @@ li a.header__nav--link:visited{
 li a.header__nav--link:hover	,
 li a.header__nav--link:active	{	
 	
-	transform: scale(1.1);
+	transform: scale(1.04) translateY(-6%);
+	
+	border-bottom: 1px solid var(--color-secondary);
 	
 }
 
@@ -764,7 +767,7 @@ li a.header__nav--link:active	{
 
 
 
-.homePage__hero , .servicesPage-block, .contact{	
+.homePage__hero , .servicesPage-block, .contact, .success-page{	
 	width: 100vw;
   margin-left: calc(-50vw + 50%);
 	background-image: radial-gradient(circle, #eaf1ffc9, 1px, transparent 1px);
@@ -2552,9 +2555,70 @@ color: var(--color-text);
 	
 		box-shadow: 2px 4px 24px rgba(14, 56, 128, 0.25);
 	
+}
+
+
+.success-page{
+	
+	display: flex;
+	place-items:center;
+	flex:1;
+	
+	
 	
 }
 
+
+.success-page--box{
+	
+	margin: 0 auto;
+	
+	display: flex;
+	flex-direction: column;
+	place-items:center;
+	gap: 3.2rem;
+	
+}
+
+
+.success-page--box h3{
+	
+	font-size: var(--text-xxxlg);
+	
+}
+
+
+.success-page--box p{
+	
+	
+	font-size: var(--text-xlg);
+	
+}
+
+
+.success-page--box a:link,
+.success-page--box a:visited{
+	
+	display: inline-block;
+	text-decoration: none;	
+	font-size: var(--text-lg);	
+	color: inherit;	
+	padding: 1rem 1.6rem;
+	
+	background-color: var(--color-secondary);	
+	transition: all .2s;	
+}
+
+.success-page--box a:hover,
+.success-page--box a:active{	
+	
+	background-color: var(--color-primary);
+	color: #fff;	
+	
+	transform: scale(1.02) translateY(-2%);
+	
+}
+	
 	
 /* //----						Login Page 					----// */
 

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /enquiry-success
+Disallow: /login-page
+Disallow: /reset-password-page
+
+Sitemap: https://www.widebaywebwise.com.au/sitemap.xml

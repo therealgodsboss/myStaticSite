@@ -21,14 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-const loginBtn = document.querySelector('.login__form');
-const logoutBtn = document.querySelector('.logout--btn');
-const signupForm = document.querySelector('.signup__form');
-
-const logoutAccountBtn = document.getElementById('my-account-logout');
-
-
-
 
 //--------------------------- Functionality -----------------------------//
 
@@ -36,6 +28,11 @@ const logoutAccountBtn = document.getElementById('my-account-logout');
 
 ///-------------------- User Login / logout / Signup --------------///
 
+const loginBtn = document.querySelector('.login__form');
+const logoutBtn = document.querySelector('.logout--btn');
+const signupForm = document.querySelector('.signup__form');
+
+const logoutAccountBtn = document.getElementById('my-account-logout');
 
 
 if (loginBtn) {
@@ -61,6 +58,7 @@ if (logoutBtn) {
 		logout();
 	})
 }
+
 
 if (logoutAccountBtn) {
 
@@ -93,9 +91,22 @@ if (signupForm) {
 }
 
 
+//--------------------  Enquiry Form   -------------------//
 
 
-/// How it works bubbling 
+
+
+
+
+
+
+
+
+
+
+
+
+//----------------- How it works bubbling  ---------------//
 
 
 

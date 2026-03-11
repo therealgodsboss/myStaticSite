@@ -21,7 +21,6 @@ router.get('/', viewController.getHomePage);
 
 
 
-
 //------ Static Pages	-----//
 
 
@@ -36,27 +35,22 @@ router.get('/static/about', viewController.getPortfolioPage);
 
 
 
-// /// About
-
-// router.get('/static/about', viewController.getAboutPage);
-
-
-
 /// Contact
 
 router.get('/static/contact', viewController.getContactPage);
 
 
+///			Enquiry Success Route 
+
+
+router.get('/enquiry-success', viewController.getEnquirySuccess);
 
 
 
 
-
-///			User Routes 
-
+///			PROTECTED ROUTES			///
 
 router.use(authController.protectRoute);
-
 
 
 
@@ -76,11 +70,6 @@ router.use(
 
 
 router.get('/admin/be_home', viewController.adminPage);
-
-
-
-
-
 
 
 

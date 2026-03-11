@@ -8,16 +8,36 @@ html
 		
 		meta(charset='UTF-8')
 		meta(name='viewport' content='width=device-width, initial-scale=1.0')
-		meta(name="description" content=pageDescription)
-		meta(name="keywords" content="Tshirts tees shirts clothing")
-		meta(name="robots" content="index, follow")
+		meta(name='description' content=pageDescription || 'Custom-built websites for local businesses in the Wide Bay region.')
 		
-		link(rel="canonical", href=canonicalUrl)
+		
+		if noIndex
+			meta(name="robots" content="noindex, nofollow")
+		else
+			meta(name="robots" content="index, follow")
+			link(rel="canonical" href=canonicalUrl)
+		
+		//-- Open Graph
+		
+		meta(property="og:type" content="website")
+		meta(property="og:site_name" content="Widebay Web Wise")
+		meta(property="og:image" content="https://www.widebaywebwise.com.au/img/og-image.jpg")
+		meta(property="og:image:width" content="1200")
+		meta(property="og:image:height" content="630")
+		
+		if noIndex
+			meta(property="og:title" content=pageTitle)
+			meta(property="og:description" content=pageDescription)
+		else
+			meta(property="og:url" content=canonicalUrl)
+			meta(property="og:title" content=pageTitle)
+			meta(property="og:description" content=pageDescription)
+		
+		
 		
 		
 		link(rel='stylesheet', href='/css/style.css?v=1.0')
 	
-		
 		
 		//-- Preconnects (speed up external resources)
 		
@@ -29,8 +49,36 @@ html
 			
 		link(rel='shortcut icon' type='image/png' href=favicon || '/img/favicons/defaultfavicon.png')
 		
-		title= typeof pageTitle !== 'undefined' ? pageTitle : `WebsiteName | ${title}`
+		title= pageTitle || 'Widebay Web Wise'
 		
+		script(type="application/ld+json").
+			{
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				"name": "Widebay Web Wise",
+				"description": "Custom-built websites for local businesses across the Wide Bay region, including Bundaberg, Hervey Bay, and Maryborough.",
+				"url": "https://www.widebaywebwise.com.au",
+				"telephone": "+61452210276",
+				"email": "widebaywebwise@gmail.com",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "4 Shailers Circuit",
+					"addressLocality": "Thabeban",
+					"addressRegion": "QLD",
+					"postalCode": "4670",
+					"addressCountry": "AU"
+				},
+				"openingHours": "Mo-Su 08:30-20:00",
+				"areaServed": [
+					"Bundaberg",
+					"Hervey Bay",
+					"Maryborough",
+					"Wide Bay"
+				],
+				"serviceType": "Web Design and Development"
+			}
+		
+	
 		
 		
 	body

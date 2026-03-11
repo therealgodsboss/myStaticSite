@@ -28,7 +28,7 @@ block content
 					
 					.contact-form--form
 					
-						form#contact--form(action="" , class='contact-form')
+						form#contact--form(action="/api/v1/enquiries" method="POST" class='contact-form')
 						
 							.contact-form--row 
 								label(for="name") Name 
@@ -42,13 +42,10 @@ block content
 								label(for="phone") Phone 
 								input(type="phone" name='phone' id='phone') 
 								
-							//- .contact-form--row 
-							//- 	label(for="business") Business Name 
-							//- 	input(type="text" name='business' id='business') 
 															
 							.contact-form--row 
-								label(for="help") Enquiry
-								select#help(name="help") 
+								label(for="enquiry") Enquiry
+								select#enquiry(name="enquiry") 
 									option(value="general-enquiry") General enquiry
 									option(value="new-website") New website
 									option(value="simple-business-website") Simple business website
