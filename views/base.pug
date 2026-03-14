@@ -2,8 +2,15 @@ doctype html
 
 html(lang="en") 
 	head
-	
-		//-- Google Tag Manager (early load)
+		if gaMeasurementId
+			script(async src=`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`)
+			script.
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', '#{gaMeasurementId}');
+		
+		//-- Google Tag Manager - do later (early load)
 		
 		
 		meta(charset='UTF-8')

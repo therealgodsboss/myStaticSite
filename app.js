@@ -26,6 +26,8 @@ const app = express();
 
 app.set('trust proxy', 1);
 
+
+
 ///---			FrontEnd Rendering			---///
 
 
@@ -49,6 +51,13 @@ app.use((req, res, next) => {
 });
 
 
+/// GA4 Tag
+
+app.use((req, res, next) => {
+	res.locals.gaMeasurementId = process.env.GA_MEASUREMENT_ID;
+	next();
+});
+
 
 
 
@@ -70,6 +79,7 @@ app.use(
 			],
 			scriptSrc: [
 				"'self'",
+				"'unsafe-inline'",
 				'https://www.googletagmanager.com',
 				'https://www.google-analytics.com',
 				'https://maps.googleapis.com'
