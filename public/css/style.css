@@ -4537,15 +4537,15 @@ border-bottom: 4px solid var(--color-secondary);
 	gap:2rem;
 }
 
-.homePage--heading {
+	.homePage--heading, .flex-heading p , .flex-heading span{	
 	
-	font-family: "Poppins", sans-serif;
-	font-weight: 500;
+		
+		font-size: 4rem;
 
-	font-size: 4rem;
+	}
 
-	line-height: .99;
-}
+
+
 	
 .homePage--sub-heading {
 	
@@ -4755,6 +4755,16 @@ li.portfolio--skills-list-item {
 	
 	@media (max-width: 50.75em) {
 		
+		
+		
+		.flex-heading{
+			
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+		}
+
+		
 	ul.header__nav--list {
   
 	font-family: "Rubik", serif;
@@ -4812,6 +4822,8 @@ flex-direction: column;
 align-items: center;
 
 }
+
+
 
 .homePage__hero--img img {
 	
@@ -5146,12 +5158,17 @@ font-size: var(--text-h4);
 
 	@media (max-width: 41.25em) {
 		
-.homePage--heading {
 
-	font-size: 2.8rem;
 
-	line-height: 1;
-}
+	.homePage--heading, .flex-heading p , .flex-heading span{	
+	
+		
+		font-size: 2.8rem;
+		line-height: 1;
+
+	}
+	
+	
 .homePage--sub-heading {
 	
     font-size: var(--text-body);
@@ -5742,6 +5759,8 @@ padding: 1.2rem .8rem ;
         padding: 2rem 0;
         font-size: var(--text-lg);
     }
+		
+
 	
 }
 
@@ -5783,10 +5802,18 @@ padding: 1.2rem .8rem ;
 
 	@media (max-width: 23.75em) {
 		
- .homePage--heading {
+		
+		
+	.homePage--heading, .flex-heading p , .flex-heading span{	
+	
+		
     font-size: 2.6rem;
     line-height: 1;
-}
+
+	}
+	
+		
+
 
 .homePage--sub-heading {
     font-size: 1.4rem;
@@ -5795,7 +5822,7 @@ padding: 1.2rem .8rem ;
 
 .homepPage-tagline {
 	
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 }
 
 .homePage__hero--img img {
