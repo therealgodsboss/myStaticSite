@@ -7,7 +7,7 @@ const User = require('./../models/userModel');
 
 const catchAsync = require('../utilities/catchAsync');
 const AppError = require('./../utilities/appError');
-const sendEmail = require('./../utilities/email');
+// const sendEmail = require('./../utilities/email');
 const Email = require('./../utilities/emailClass');
 
 const { filterObj } = require('./../utilities/filterObject');

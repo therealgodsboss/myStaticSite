@@ -1,6 +1,6 @@
 const Enquiry = require('./../models/enquiryModel');
 const catchAsync = require('./../utilities/catchAsync');
-const Email = require('./../utilities/email');
+const Email = require('./../utilities/emailClass');
 
 exports.createEnquiry = catchAsync(async (req, res, next) => {
 
@@ -12,11 +12,12 @@ exports.createEnquiry = catchAsync(async (req, res, next) => {
 		message: req.body.message
 	});
 
-	// const url = `${req.protocol}://${req.get('host')}/`
+	const url = `${req.protocol}://${req.get('host')}/`;
 
+	res.redirect(303, '/enquiry-success');
 
-	// await new Email(newEnquiry, url).enquiryEmail();
-
-	res.status(201).redirect('/enquiry-success');
+	new Email(newEnquiry, url).enquiryEmail().catch(err => {
+		console.error('Enquiry email failed:', err.response || err);
+	});
 
 });

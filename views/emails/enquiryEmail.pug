@@ -1,16 +1,12 @@
-extends baseEmail 
+extends baseEmail
 
-block content 
+block content
+  header
+    .orderConfirm_header--img
+      img(src=logoUrl, alt="company-logo")
 
-	header
-	
-		.orderConfirm_header--img
-		
-			img(src=logoUrl, alt="company-logo")
-	
-	  main
+  main
     .email_body
       h2 New Website Enquiry
       p You have received a new enquiry through the website contact form.
       p Please log in and check Atlas for the full details.
-			

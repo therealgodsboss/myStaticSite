@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 const pug = require('pug');
-const { convert } = require('html-to-text')
+const { convert } = require('html-to-text');
 
 module.exports = class Email {
 
@@ -21,7 +21,10 @@ module.exports = class Email {
 			return nodemailer.createTransport(
 				{
 					host: process.env.EMAIL_HOST,
-					port: process.env.EMAIL_PORT,
+					port: Number(process.env.EMAIL_PORT),
+					connectionTimeout: 10000,
+					greetingTimeout: 10000,
+					socketTimeout: 15000,
 					auth: {
 
 						user: process.env.EMAIL_USERNAME,
@@ -29,7 +32,7 @@ module.exports = class Email {
 
 					}
 				}
-			)
+			);
 		}
 
 		/// (Brevo)
@@ -39,11 +42,14 @@ module.exports = class Email {
 			return nodemailer.createTransport({
 
 				host: process.env.BREVO_HOST,
-				port: process.env.BREVO_PORT,
+				port: Number(process.env.BREVO_PORT),
 
 				/// use secure on port 587, dont on 465
 
-				secure: false,
+				secure: Number(process.env.BREVO_PORT) === 465,
+				connectionTimeout: 10000,
+				greetingTimeout: 10000,
+				socketTimeout: 15000,
 				auth: {
 
 					user: process.env.BREVO_LOGIN,
@@ -51,34 +57,51 @@ module.exports = class Email {
 				}
 			});
 		}
+
+		throw new Error(`Unsupported NODE_ENV value: ${process.env.NODE_ENV}`);
 	}
 
 	async send(template, subject) {
 
-		const html = pug.renderFile(`${__dirname}/../views/emails/${template}.pug`,
-			{
-				firstname: this.firstname,
-				url: this.url,
-				subject,
-				logoUrl: `${process.env.CANONICAL_URL}/img/logo/og-image.jpg`
-			}
-		);
-
-		const mailOptions = {
-
-			from: this.from,
-			to: this.to,
-			subject,
-			html,
-			text: convert(html)
-		}
-
 		try {
-			await this.newTransport().sendMail(mailOptions);
+			const transport = this.newTransport();
+			const html = pug.renderFile(`${__dirname}/../views/emails/${template}.pug`,
+				{
+					firstname: this.firstname,
+					url: this.url,
+					subject,
+					logoUrl: `${process.env.CANONICAL_URL}/img/logo/newLogo.png`
+				}
+			);
+
+			const mailOptions = {
+
+				from: this.from,
+				to: this.to,
+				subject,
+				html,
+				text: convert(html)
+			};
+
+			const info = await transport.sendMail(mailOptions);
+			console.log('Email sent:', {
+				to: mailOptions.to,
+				subject: mailOptions.subject,
+				messageId: info.messageId,
+				response: info.response
+			});
+			return info;
 
 		} catch (err) {
 
-			console.error('❌ Email failed:', err.response || err);
+			console.error('Email failed:', {
+				message: err.message,
+				code: err.code,
+				command: err.command,
+				response: err.response,
+				responseCode: err.responseCode
+			});
+			throw err;
 		}
 	}
 
@@ -88,19 +111,19 @@ module.exports = class Email {
 
 	async sendWelcome() {
 
-		await this.send('welcome', 'Welcome to our website')
+		await this.send('welcome', 'Welcome to our website');
 	}
 
 
 	async orderConfirm() {
 
-		await this.send('orderConfirm', 'Order details')
+		await this.send('orderConfirm', 'Order details');
 	}
 
 
 	async resetPassword() {
 
-		await this.send('resetPassword', 'Reset Password')
+		await this.send('resetPassword', 'Reset Password');
 	}
 
 
@@ -111,4 +134,4 @@ module.exports = class Email {
 	}
 
 
-}
+};
